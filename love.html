@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Khusus buat kamu</title>
+    <style>
+        body {
+            background-color: #fff0f5;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            color: #d63384;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .heart {
+            font-size: 5em;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            50%{transform: scale(1.2);}
+            100%{transform: scale(1);}
+        }
+        .choice-buttons {
+            margin-top: 40px;
+        }
+        .btn {
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 1.5em;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover {
+            background-color: #ff85c1;
+        }
+
+        .result {
+            margin-top: 30px;
+            font-size: 2em;
+        }
+
+        /* Animasi love */
+        .love-animation {
+            font-size: 4em;
+            animation: float 2s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0);}
+            50% { transform: translateY(-20px);}
+            100% { transform: translateY(0);}
+        }
+
+        /* Animasi sedih */
+        .sad-animation {
+            font-size: 4em;
+            animation: shake 0.5s infinite;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hai sayang ku</h1>
+    <div class="heart">❤️</div>
+    <p>aku cuma mau bilang</p>
+    <p><strong>makasih udah jadi penyemangat ku.</strong></p>
+    <p>kamu selalu bkin hari ku menjadi lebih indah</p>
+
+    <div class="choice-buttons">
+        <button class="btn" onclick="jawab('ya')">Ya</button>
+        <button class="btn" onclick="jawab('tidak')">Tidak</button>
+    </div>
+
+    <div class="result" id="hasilJawaban"></div>
+
+    <script>
+        function jawab(pilihan) {
+            const hasil = document.getElementById('hasilJawaban');
+            if (pilihan === 'ya') {
+                hasil.innerHTML = "🤗❤️ Peluk sayang! Aku juga sayang kamu! ❤️🤗<br><div class='love-animation'>💞💓💕</div>";
+            } else {
+                hasil.innerHTML = "😢 Yah... aku sedih...<br><div class='sad-animation'>💔😭💔</div>";
+            }
+        }
+    </script>
+</body>
+</html>
